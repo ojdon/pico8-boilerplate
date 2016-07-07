@@ -56,12 +56,13 @@ end
 
 function gameupdate()
 	score+=1
+	playercontrol()
 end
 
 -- draw functions
 function titledraw()
 	local titletxt = "title screen"
-	local starttxt = "press Ž	/ z to start"
+	local starttxt = "press z to start"
 	rectfill(0,0,screenwidth, screenheight, 3)
 	print(titletxt, hcenter(titletxt), screenheight/4, 10)
 	print(starttxt, hcenter(starttxt), (screenheight/4)+(screenheight/2),7)			
@@ -73,6 +74,28 @@ function gamedraw()
 	rectfill(0,0,screenwidth, 10, 0)
 	print("score: " .. score, 10, 4, 7)
 	print(gametxt, hcenter(gametxt), hcenter(gametxt), 10)
+
+	playerdraw()
+end
+
+-- handle button inputs
+function playercontrol()
+	if (btn(0)) then player.x-=1 end
+	if (btn(1)) then player.x+=1 end
+	if (btn(2)) then player.y-=1 end
+	if (btn(3)) then player.y+=1 end
+
+	-- check if the player is still onscreen
+	if (player.x <= 0) then player.x += 1 end
+	if (player.x >= screenwidth) then player.x -= 1 end
+	if (player.y <= 0) then player.y += 1 end
+	if (player.y >= screenheight) then player.y -= 1 end
+
+end
+
+-- draw player sprite
+function playerdraw()
+	spr(0, player.x, player.y)
 end
 
 -- library functions
@@ -89,7 +112,7 @@ function vcenter(s)
 	-- cut in half and rounded down
 	return (screenheight /2)-flr(5/2)
 end
-				
+
 --- collision check
 function iscolliding(obj1, obj2)
 	local x1 = obj1.x
