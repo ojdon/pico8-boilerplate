@@ -16,12 +16,9 @@ player.width = 7
 player.height = 7
 
 -- game loop
+
 function _init()
-	if scene==0 then
-		titleinit()
-	elseif scene==1 then
-		gameinit()
-	end
+-- This function runs as soon as the game loads
 end
 
 function _update()
@@ -39,16 +36,6 @@ function _draw()
 		gamedraw()
 	end
 end
-
--- init functions
-function titleinit()
-
-end
-
-function gameinit()
-
-end
-
 -- update functions
 function titleupdate()
 	if btnp(4) then
