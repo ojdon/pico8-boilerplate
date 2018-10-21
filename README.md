@@ -1,5 +1,7 @@
 ## What is the "Pico-8 Boilerplate"?
 
+> 💡 Tico-80 developer? I have ported this boilerplate here: https://github.com/ojdon/tic80-boilerplate
+
 The Pico-8 Boilerplate is a basic template of common game logic and functionality for other game developers to use to base their Pico-8 games upon. 
 
 ## Features
@@ -16,7 +18,7 @@ Feel free to open a new issue with your request and I'll consider adding it to t
 
 ## Want to contribute?
 
-Simply fork and submit a [pull request]() once you are done!
+Simply fork and submit a [pull request](https://github.com/ojdon/pico8-boilerplate/pulls) once you are done!
 
 ## Useful Resources
 * [Official Documentation](http://www.lexaloffle.com/pico-8.php?page=manual)
